@@ -1,0 +1,23 @@
+
+	local active = false
+	local spinpart = game.Players.LocalPlayer.Character:FindFirstChild("Torso"):WaitForChild("Part")
+	local head = game.Players.LocalPlayer.Character[game.Players.LocalPlayer.Name]:FindFirstChild("Head")
+	local attach2 = spinpart:FindFirstChild("Attachment")
+
+	repeat
+		if count > 1 then
+			count = count - 1
+			active = true
+			wait(0.05)
+			spinpart.AthO_2.CFrame = spinpart.AthO_2.CFrame * CFrame.Angles(0,0.2,0)
+			local explosion = Instance.new("Explosion")
+			explosion.Position = head.Position + Vector3.new(0,5,0)
+			explosion.DestroyJointRadiusPercent = 0
+			explosion.BlastPressure = 0
+			explosion.Parent = game.Players.LocalPlayer.Character[game.Players.LocalPlayer.Name]:FindFirstChild("Head")
+			explosion.Position = attach2.WorldPosition
+		elseif count <=1 then
+			active = false
+			count = 150
+		end
+	until active == false
