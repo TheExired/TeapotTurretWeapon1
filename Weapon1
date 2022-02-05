@@ -3,6 +3,7 @@
 	local spinpart = game.Players.LocalPlayer.Character:FindFirstChild("Torso"):WaitForChild("Part")
 	local head = game.Players.LocalPlayer.Character[game.Players.LocalPlayer.Name]:FindFirstChild("Head")
 	local attach2 = spinpart:FindFirstChild("Attachment")
+	local count = 150
 
 	repeat
 		if count > 1 then
